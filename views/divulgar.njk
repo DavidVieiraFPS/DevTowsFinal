@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property="og:title" content="Vestibulinho Etec" />
+    <meta property="og:description" content="1º semestre de 2024. Nossos cursos estão com as portas abertas para você fazer parte de uma das melhores redes de ensino">
+    <meta property="og:url" content="https://etecfy.onrender.com/divulgar/{{ link }}" />
+    <meta property="og:image" content="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQweFspZUekAIJutSSALehWpQYH6g907cPZPx2jYpWW1nAt9I8IxTTGjO1HwPtNVInVK1w&usqp=CAU" />
+    <style>
+        /* Estilos gerais */
+        html {
+            font-family: 'Noto Sans', sans-serif;
+            font-family: 'Roboto', sans-serif;
+        }
+        body {
+        font-family: Arial, sans-serif;
+        background: rgb(18, 18, 20);
+        padding: 64px;
+        text-align: left;
+        }
+
+        h1 {
+        font-size: 36px;
+        color: rgb(225, 225, 230);
+        margin-bottom: 20px;
+        }
+        p {
+            line-height: 26px;
+            color: rgb(168, 168, 179);
+            font-size: 16px;
+            margin-bottom: 40px;
+        }
+        .container {
+            margin: 0px auto;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+        /* Estilos do formulário */
+        form {
+        display: flex;
+        flex-direction: column;
+        background: rgb(32, 32, 36);
+        border-radius: 5px;
+        padding: 64px;
+        align-items: center;
+        text-align: left;
+
+        }
+        form h1 {
+            font-size: 20px;         
+            width: -webkit-fill-available;
+            margin-bottom: 20px;
+            color: rgb(255, 255, 255);
+        }
+
+        label {
+        display: block;
+        font-weight: bold;
+        margin-bottom: 10px;
+        color: #333;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="tel"],
+        select {      
+            width: -webkit-fill-available;
+            height: 50px;
+            font-size: 20px;
+            font-weight: 500;
+            background: rgb(18, 18, 20);
+            border-color: rgb(18, 18, 20);
+            color: rgb(255, 255, 255);
+            padding: 0px 1em 0px 2.65em;
+            border-radius: 5px;
+            outline: 0px;
+            border: 2px solid rgb(40, 39, 44);
+            transition: border 0.2s ease 0s;
+        }
+
+        input:focus, select:focus{
+            border: 3px solid rgb(130, 87, 229);
+        }
+
+        input[type="checkbox"] {
+        margin-right: 5px;
+        }
+
+        .box-check {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            width: 100%;
+        }
+        .comunicacoes {
+            font-size: 14px;
+            margin-top: 14px;
+            color: rgb(204, 204, 204);
+            line-height: 26px;
+        }
+
+        button[type="submit"] {
+            margin-top: 20px;
+            background: rgb(130, 87, 229);
+            border-radius: 5px;
+            border: 0px;
+            color: rgb(255, 255, 255);
+            font-weight: bold;
+            height: 50px;
+            transition: background 0.2s ease 0s, color 0.2s ease 0s;
+            font-size: 19px;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        button[type="submit"]:hover {
+        background-color: #0056b3;
+        }
+
+        /* Responsividade */
+        @media (max-width: 500px) {
+            form {
+                padding: 10px;
+            }
+        }
+        @media (max-width: 1300) {
+            .container {
+                flex-direction: column;
+            }
+        } 
+    </style>
+    <title>Formulário de Cadastro</title>
+</head>
+<body>
+    <div class="container">
+        <div>
+            <h1>Mais de 60 pessoas estão divulgando 
+            <br/>o Vestibulinho Etec.</h1>
+            <p>Junte-se a milhares de vestibulandos e e concorra a mimos limitados</p>
+        </div>
+        
+        <form action="/cadastro" method="POST">
+            <h1>Faça sua inscrição</h1>
+
+            <input type="text" id="nome" name="nome" class="form-control" required placeholder="Seu nome"><br><br>
+
+            <input type="email" id="email" name="email" class="form-control" required placeholder="Seu email"><br><br>
+
+            <input type="tel" id="telefone" name="telefone" class="form-control" required placeholder="Seu telefone"><br><br>
+
+            <select id="curso" name="curso" class="form-control" required placeholder="Seu curso">
+                <option value="curso1">Curso 1</option>
+                <option value="curso2">Curso 2</option>
+                <option value="curso3">Curso 3</option>
+            </select><br><br>
+
+            <input type="text" id="cpf" name="cpf" class="form-control" required placeholder="Seu nome"><br><br>
+            
+            <div class="box-check">
+                <input type="checkbox" id="comunicacoes" name="comunicacoes" class="form-control"><br><br>
+                <label class="comunicacoes" for="comunicacoes">Ao se registrar, você aceita nossos termos de uso e a nossa política de privacidade.</label>
+            </div>
+
+            <input type="text" id="link" name="link" value="{{ link }}" class="form-control" required style="display: none;">
+            <button type="submit">Cadastrar</button>
+        </form>
+    </div>
+</body>
+</html>

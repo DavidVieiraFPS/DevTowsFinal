@@ -1,0 +1,28 @@
+{
+  "name": "etecfy",
+  "version": "1.0.0",
+  "description": "Nunjucks",
+  "main": "app.js",
+  "engines": {
+    "node": "18.x"
+  },
+  "scripts": {
+    "start": "node app.js",
+    "dev": "node app.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@sendgrid/mail": "^7.7.0",
+    "ejs": "^3.1.9",
+    "express": "^4.18.2",
+    "mongoose": "^7.5.2",
+    "nodemailer": "^6.9.5",
+    "nunjucks": "^3.2.4",
+    "qrcode": "^1.5.3",
+    "sendgrid": "^5.2.3",
+    "sqlite3": "^5.1.6",
+    "uuid": "^9.0.1"
+  }
+}

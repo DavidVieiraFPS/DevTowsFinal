@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <style type="text/css">
+        html {
+            font-family: 'Noto Sans', sans-serif;
+            font-family: 'Roboto', sans-serif;
+        }
+        body {
+            max-width: 1200px;
+            padding: 24px;
+            height: 100%;
+
+            display: flex;
+            justify-content: center;
+            background: linear-gradient(90deg, rgba(18,18,20,1) 0%, rgba(24,24,27,1) 100%);
+
+            align-items: center;
+            margin: auto;
+            height: 100vh;
+        }
+        .container {
+            max-width: 48rem;
+            color: #E1E1E6;
+            border-radius: 5px;
+            background-image: url(https://app.rocketseat.com.br/assets/plus/backgrounds/freemium-onboarding-card.png);
+            
+            background-size: cover;
+            padding: 32px;
+            overflow: hidden;
+
+            display: grid;
+            justify-items: center;
+            text-align: center;
+
+            height: fit-content;
+            display: grid;
+            justify-content: center;
+        }
+        @media (max-width: 786px) {
+            .container {
+                padding: 8px;
+                overflow: inherit;
+            }
+        }
+        h1 {
+            text-align: center;
+            -webkit-text-fill-color: transparent;
+            margin-top: var(--space-1) !important;
+            margin-bottom: var(--space-4) !important;
+            background: linear-gradient(90deg, rgb(130, 87, 229) 0%, rgb(153, 109, 255) 16.22%, rgb(255, 146, 123) 46.72%, rgb(255, 212, 127) 68.31%, rgb(255, 191, 64) 85.89%, rgb(255, 92, 57) 100%) text;
+            background: linear-gradient(90deg, rgb(130, 87, 229) 0%, rgb(153, 109, 255) 16.22%, rgb(255, 146, 123) 46.72%, rgb(255, 212, 127) 68.31%, rgb(255, 191, 64) 85.89%, rgb(255, 92, 57) 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        p {
+            font-size: 1rem;
+            color: #C4C4CC;
+            max-width: 28em;
+        }     
+        .linkUnico {
+            display: grid;
+            gap: 1em;
+        }
+        .linkUnico a {
+            text-decoration: none;
+            letter-spacing: 0.5px;
+            color: limegreen;
+            line-height: 160%;
+        }
+    </style>
+    <title>Página de Sucesso</title>
+</head>
+<body>
+    <div class="container">
+        <h1 class="title">Cadastro realizado com sucesso!</h1>
+    
+        <p>Obrigado por se cadastrar {{ nome }}! Comece a divulgar e acumule pontos e concorra a prêmios incríveis!"</p>
+        
+        <p>QR Code:</p>
+        <img src="{{ qrCode }}" alt="QR Code">
+
+        <p class="linkUnico">Compartilhe e para cada inscrito no vestibulinho ganhe pontos <a href="https://etecfy.onrender.com/divulgar/{{ linkUnico }}">etecfy.onrender.com/divulgar/{{ linkUnico }}</a></p>
+
+        <!-- AddToAny BEGIN -->
+        <div class="a2a_kit a2a_kit_size_32 a2a_default_style" data-a2a-url="etecfy.onrender.com/divulgar/{{ linkUnico }}">
+        <a class="a2a_dd" href="https://www.addtoany.com/share"></a>
+        <a class="a2a_button_whatsapp"></a>
+        <a class="a2a_button_facebook"></a>
+        <a class="a2a_button_telegram"></a>
+        <a class="a2a_button_google_gmail"></a>
+        </div>
+        <script>
+        var a2a_config = a2a_config || {};
+        a2a_config.locale = "pt-BR";
+        a2a_config.num_services = 4;
+        </script>
+        <script async src="https://static.addtoany.com/menu/page.js"></script>
+        <!-- AddToAny END -->
+
+        <p>Total divulgados: {{ totalDivulgados }}</p>
+    </div>
+</body>
+</html>
